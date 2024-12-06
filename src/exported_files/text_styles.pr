@@ -10,6 +10,7 @@ class AppTextStyles {
   {[ for typographyToken in typographyTokenInGroups ]}
   {[ const fullTokenPath = arrayConcat(fullTokenGroupPath, typographyToken.name) /]}
   {[ const fullTokenName = arrayJoin(fullTokenPath, " ").camelcased(false) /]}
+  {[ if (fullTokenName.includes("Mobile")) ]}
   {[ let fontStyle = "normal" /]}
   {[ if ds.isFontItalic(typographyToken.value.font) ]}
     {[ set fontStyle = "italic" /]}
@@ -52,6 +53,7 @@ class AppTextStyles {
     leadingDistribution: TextLeadingDistribution.even,
   );
 
+  {[/]}
   {[/]}
 {[/]}
   AppTextStyles._();
